@@ -1,0 +1,7 @@
+nav {
+    display: flex;
+    padding: 1rem;
+    gap: 2rem;
+    justify-content: flex-end;
+    background-color: bisque;
+}
