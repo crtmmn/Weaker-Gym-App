@@ -1,38 +1,53 @@
-import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Exercises() {
-    const [searchTerm, setSearchTerm] = useState("")
-    const [ExercisesList, setExercise] = useState([])
+    const [searchTerm, setSearchTerm] = useState("");
+    const [exercisesDict, setExercisesDict] = useState({});
+    const [filteredExercisesDict, setFilteredExercisesDict] = useState({});
 
     const handleSearch = async () => {
         try {
-            const response = await fetch(`https://api.api-ninjas.com/v1/exercises?name=${searchTerm}`,
-                {headers: {'X-Api-Key': 'RhXyk5xXSCUIyd7/y6PNVw==JWAtPm1sqpnlSQEP'}}
-            )
+            const response = await fetch(
+                `https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json`
+            );
+            const result = await response.json();
+            const dictionary = result.reduce((acc, exercise) => {
+                acc[exercise.name] = exercise.id;
+                return acc;
+            }, {});
+            setExercisesDict(dictionary);
+            setFilteredExercisesDict(dictionary);
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
-            const result = await response.json()
-            if (Array.isArray(result)) {
-                setExercise(result);
-            } else {
-                console.log("API returned a non-array response:", result);
+    useEffect(() => {
+        const filtered = Object.keys(exercisesDict).reduce((acc, name) => {
+            if (name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                acc[name] = exercisesDict[name];
             }
-        }
-        catch(error) {
-            console.log(error)
-        }
-    }
+            return acc;
+        }, {});
+        setFilteredExercisesDict(filtered);
+    }, [searchTerm, exercisesDict]);
 
     return (
         <div>
-            <input type="text" placeholder="Name" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}></input>
+            <input type="text" placeholder="Exercise name" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
             <button onClick={handleSearch}>Search</button>
-          {
-          ExercisesList.map((exercise, index) => (
-            <li><Link to={"/exercise/" + exercise.name} key={index}>{exercise.name}</Link></li>
-          ))
-          }
+            <div id="results">
+                <ul>
+                    {
+                    Object.entries(filteredExercisesDict).map(([name, id], index) => (
+                        <li key={index}><Link to={`/exercise/${id}`}>{name}</Link></li>
+                    ))
+                    }
+                </ul>
+            </div>
         </div>
-      );
+    );
 }
-export default Exercises
+
+export default Exercises;
