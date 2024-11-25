@@ -4,8 +4,8 @@ import './navbar.css';
 function Navbar() {
     return (
         <nav>
-            <Link to="/">Home</Link>
-            <Link to="/exercises">Exercises</Link>
+            <Link id="navbar" to="/">Home</Link>
+            <Link id="navbar" to="/exercises">Exercises</Link>
         </nav>
     )
 }

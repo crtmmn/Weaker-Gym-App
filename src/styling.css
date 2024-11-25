@@ -1,0 +1,22 @@
+#container, html {
+    background-color: black;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.instruction {
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+#exerciseCard {
+    background-color: black;
+    border: 2px solid rgb(251, 215, 52);
+    border-radius: 0.5%;
+    color: white;
+}

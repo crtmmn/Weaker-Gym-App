@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import Loading from "./Loading/Loading.js"
+import './styling.css'
 
 function Exercise() {
 
@@ -25,7 +26,7 @@ function Exercise() {
     }
 
     return (
-        <div>
+        <div id="container">
             {isLoading && <Loading/>}
             <h1> { exercise.name }</h1>
             <h4>Category: {exercise.category} </h4>
@@ -39,8 +40,8 @@ function Exercise() {
             {
                 exercise.mechanic != null && <h4>Mechanic: {exercise.mechanic}</h4>
             }
-            <h5>Instruction: {exercise.instructions} </h5>
-            <img height='200px' alt={`${exerciseID}1`} src={`https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/${exerciseID}/0.jpg`}></img>
+            <h5 className="instruction">Instruction: {exercise.instructions} </h5>
+            <img height='200px' style={{ marginRight: "5rem"}} alt={`${exerciseID}1`} src={`https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/${exerciseID}/0.jpg`}></img>
             <img height='200px' alt={`${exerciseID}2`} src={`https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/${exerciseID}/1.jpg`}></img>
         </div>
     )
