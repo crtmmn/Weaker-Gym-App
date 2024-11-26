@@ -26,21 +26,21 @@ function Exercise() {
     }
 
     return (
-        <div id="container">
+        <div id="container" className="pt-3">
             {isLoading && <Loading/>}
-            <h1> { exercise.name }</h1>
-            <h4>Category: {exercise.category} </h4>
-            <h4>Equipment: {exercise.equipment} </h4>
-            <h4>Level: {exercise.level} </h4>
-            <h4>Primary muscles: {exercise.primaryMuscles} </h4>
+            <h1 id="weakerID"> { exercise.name }</h1>
+            <h4 className="pb-2 pt-2">Category: {exercise.category} </h4>
+            <h4 className="pb-2">Equipment: {exercise.equipment} </h4>
+            <h4 className="pb-2">Level: {exercise.level} </h4>
+            <h4 className="pb-2">Primary muscles: {exercise.primaryMuscles} </h4>
             {
-                exercise.secondaryMuscles && exercise.secondaryMuscles.length > 0 && (<h4>Secondary muscles: {exercise.secondaryMuscles.join(", ")}</h4>)
+                exercise.secondaryMuscles && exercise.secondaryMuscles.length > 0 && (<h4 className="pb-2 pt-2">Secondary muscles: {exercise.secondaryMuscles.join(", ")}</h4>)
             }
-            <h4>Force: {exercise.force} </h4>
+            <h4 className="pb-2">Force: {exercise.force} </h4>
             {
-                exercise.mechanic != null && <h4>Mechanic: {exercise.mechanic}</h4>
+                exercise.mechanic != null && <h4 className="pb-2 pt-2">Mechanic: {exercise.mechanic}</h4>
             }
-            <h5 className="instruction">Instruction: {exercise.instructions} </h5>
+            <h5 className="instruction pb-2 pt-2">Instruction: {exercise.instructions} </h5>
             <img height='200px' style={{ marginRight: "5rem"}} alt={`${exerciseID}1`} src={`https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/${exerciseID}/0.jpg`}></img>
             <img height='200px' alt={`${exerciseID}2`} src={`https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/${exerciseID}/1.jpg`}></img>
         </div>

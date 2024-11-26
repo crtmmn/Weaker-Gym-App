@@ -3,10 +3,15 @@
     text-align: center;
     color: white;
     text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
 }
 
-a {
+a, #exerciseLinkID, #weakerID {
     text-decoration: none;
+    color: rgb(251, 215, 52);
+    text-shadow: 1px 1px 10px rgb(251, 215, 52);
+    font-weight: bold;
 }
 
 .instruction {
@@ -19,4 +24,59 @@ a {
     border: 2px solid rgb(251, 215, 52);
     border-radius: 0.5%;
     color: white;
+}
+
+::placeholder {
+    color: white;
+}
+
+input[type=text] {
+	appearance: none;
+	border: none;
+	outline: none;
+	border: 2px solid rgb(251, 215, 52);
+	background: black;
+	border-radius: .2em .2em 0 0;
+	padding: .4em;
+	color: white;
+}
+
+select {
+	appearance: none;
+	border: none;
+	outline: none;
+	border: 2px solid rgb(251, 215, 52);
+	background: black;
+	border-radius: .2em .2em 0 0;
+	padding: .4em;
+	color: white;
+}
+
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: black;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(251, 215, 52);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(200, 170, 35);
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(251, 215, 52) black;
+}
+
+.exerciseImage {
+    width: 418px;
+    height: 279px;
 }

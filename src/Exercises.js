@@ -98,14 +98,14 @@ function Exercises() {
                         <div id="exerciseCard" class="card mb-3" style={{ width: "70rem"}}  key={index}>
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                <img alt={`${id}1`} src={`https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/${id}/0.jpg`} class="img-fluid rounded-start"></img>
+                                <img alt={`${id}1`} src={`https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/${id}/0.jpg`} class="img-fluid rounded-start exerciseImage"></img>
                                 </div>
                                 <div class="col-md-8">
                                 <div class="card-body">
-                                    <h2 class="card-title">{name}</h2>
+                                    <h2 class="card-title" id="weakerID">{name}</h2>
                                     <h4 class="card-text pt-3">{capitalWord(String(primaryMuscles))}</h4>
                                     <h4 class="card-text pt-3 pb-3">{capitalWord(String(category))}</h4>
-                                    <Link class="btn btn-primary" to={`/exercise/${id}`}>More</Link>
+                                    <Link class="btn btn-warning fw-bolder" to={`/exercise/${id}`}>More</Link>
                                 </div>
                                 </div>
                             </div>
