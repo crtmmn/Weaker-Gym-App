@@ -94,6 +94,9 @@ function Exercises() {
             <div class="d-flex p-2 justify-content-center">
                 <ul>
                     {
+                    Object.entries(filteredExercisesDict).length === 0 ? (
+                        <h2>No result found.</h2>
+                    ) : (
                     Object.entries(filteredExercisesDict).map(([name, [id, primaryMuscles, category]], index) => (
                         <div id="exerciseCard" class="card mb-3" style={{ width: "70rem"}}  key={index}>
                             <div class="row g-0">
@@ -111,7 +114,7 @@ function Exercises() {
                             </div>
                         </div>
                     ))
-                    }
+                    )}
                 </ul>
             </div>
         </div>
