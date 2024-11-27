@@ -29,7 +29,7 @@ function Exercises() {
 
             const resultCategories = {};
             result.forEach(exercise => {
-                resultCategories[exercise.category] = true; // Wykorzystujemy obiekt do przechowywania unikalnych kategorii
+                resultCategories[exercise.category] = true;
             });
             const uniqueCategories = Object.keys(resultCategories).sort();
             setCategories(uniqueCategories)
