@@ -36,7 +36,7 @@ function Home() {
           <p>Explore the exercises and get all the details you need on our <a id='exercisesLinkID' href="/exercises">Exercises</a> page.</p>
         </div>
         <div>
-            <p>API that I used: <a id="exerciseLinkID" href="https://github.com/yuhonas/free-exercise-db">API by yuhonas</a></p>
+            <p>API that I used: <a id="exerciseLinkID" target="_blank" href="https://github.com/yuhonas/free-exercise-db">API by yuhonas</a></p>
         </div>
       </div>
     );
