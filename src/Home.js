@@ -35,6 +35,9 @@ function Home() {
           <p>Ready to take your training to the next level? Search for exercises, filter by muscle group, and start building your perfect workout routine today!</p>
           <p>Explore the exercises and get all the details you need on our <a id='exercisesLinkID' href="/exercises">Exercises</a> page.</p>
         </div>
+        <div>
+            <p>API that I used: <a id="exerciseLinkID" href="https://github.com/yuhonas/free-exercise-db">API by yuhonas</a></p>
+        </div>
       </div>
     );
   }
