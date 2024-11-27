@@ -95,7 +95,7 @@ function Exercises() {
                 <ul>
                     {
                     Object.entries(filteredExercisesDict).length === 0 ? (
-                        <h2>No result found.</h2>
+                        <h2 className="card-title">No result found.</h2>
                     ) : (
                     Object.entries(filteredExercisesDict).map(([name, [id, primaryMuscles, category]], index) => (
                         <div id="exerciseCard" class="card mb-3" style={{ width: "70rem"}}  key={index}>
